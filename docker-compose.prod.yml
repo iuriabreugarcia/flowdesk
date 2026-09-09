@@ -1,0 +1,61 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: flowdesk-postgres-prod
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: flowdesk
+      POSTGRES_USER: flowdesk
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - flowdesk_postgres_prod_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U flowdesk -d flowdesk"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  api:
+    build:
+      context: ./backend/FlowDesk.Api
+    container_name: flowdesk-api
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      ConnectionStrings__DefaultConnection: Host=postgres;Port=5432;Database=flowdesk;Username=flowdesk;Password=${POSTGRES_PASSWORD}
+      Jwt__Issuer: FlowDesk.Api
+      Jwt__Audience: FlowDesk.Web
+      Jwt__Key: ${JWT_KEY}
+      Jwt__ExpirationMinutes: 60
+      SeedDemoData: "true"
+    ports:
+      - "5080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/api/health >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
+  web:
+    build:
+      context: ./frontend/flowdesk-web
+    container_name: flowdesk-web
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/ >/dev/null || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  flowdesk_postgres_prod_data:

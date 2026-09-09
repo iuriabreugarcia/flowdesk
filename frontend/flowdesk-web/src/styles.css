@@ -1,0 +1,289 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+  --border: #e5e9f2;
+  --text: #172033;
+  --muted: #6f7890;
+  --primary: #6d5dfc;
+  --primary-strong: #5547eb;
+  --success: #128a62;
+  --warning: #c57a08;
+  --danger: #c33f53;
+  --sidebar: #0b1020;
+  --shadow: 0 20px 50px rgba(24, 32, 51, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-width: 320px;
+  font-size: 16px;
+  line-height: 1.45;
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* Theme tokens */
+html[data-theme='dark'] {
+  --bg: #0f1422;
+  --surface: #151c2d;
+  --surface-soft: #1a2235;
+  --border: #29344b;
+  --text: #e9edf6;
+  --muted: #9aa5ba;
+  --primary: #8b7fff;
+  --primary-strong: #7567ff;
+  --success: #43c79a;
+  --warning: #e8a94a;
+  --danger: #ef6f84;
+  --sidebar: #090e1b;
+  --shadow: 0 20px 55px rgba(0, 0, 0, .26);
+}
+
+html[data-theme='dark'],
+html[data-theme='dark'] body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+html[data-theme='dark'] body {
+  color-scheme: dark;
+}
+
+/*
+  Components in this portfolio use standalone inline styles. These global
+  overrides keep the visual language consistent without coupling ThemeService
+  to feature components.
+*/
+html[data-theme='dark'] .content-area,
+html[data-theme='dark'] .page-content,
+html[data-theme='dark'] .page-shell,
+html[data-theme='dark'] .login-page,
+html[data-theme='dark'] .form-panel {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+html[data-theme='dark'] .topbar {
+  border-color: var(--border) !important;
+  background: rgba(15, 20, 34, .92) !important;
+}
+
+html[data-theme='dark'] .top-user strong,
+html[data-theme='dark'] h1,
+html[data-theme='dark'] h2,
+html[data-theme='dark'] h3,
+html[data-theme='dark'] .panel-title,
+html[data-theme='dark'] .section-title,
+html[data-theme='dark'] .movements-heading,
+html[data-theme='dark'] .kpi-heading,
+html[data-theme='dark'] .product-cell strong,
+html[data-theme='dark'] .customer-cell strong,
+html[data-theme='dark'] .person strong,
+html[data-theme='dark'] .completed-main strong,
+html[data-theme='dark'] .rank-main strong,
+html[data-theme='dark'] .order-card strong {
+  color: var(--text) !important;
+}
+
+html[data-theme='dark'] p,
+html[data-theme='dark'] small,
+html[data-theme='dark'] .subtitle,
+html[data-theme='dark'] .date-text,
+html[data-theme='dark'] .stacked-text span,
+html[data-theme='dark'] .stock-note,
+html[data-theme='dark'] .toolbar-meta,
+html[data-theme='dark'] .panel-empty,
+html[data-theme='dark'] .field-hint,
+html[data-theme='dark'] .profile-description,
+html[data-theme='dark'] .profile-name {
+  color: var(--muted) !important;
+}
+
+html[data-theme='dark'] .summary-card,
+html[data-theme='dark'] .content-card,
+html[data-theme='dark'] .panel,
+html[data-theme='dark'] .metric-card,
+html[data-theme='dark'] .kpi-card,
+html[data-theme='dark'] .toolbar,
+html[data-theme='dark'] .table-wrap,
+html[data-theme='dark'] .mobile-card,
+html[data-theme='dark'] .order-card,
+html[data-theme='dark'] .kanban-column,
+html[data-theme='dark'] .drawer,
+html[data-theme='dark'] .login-card,
+html[data-theme='dark'] .profile-card,
+html[data-theme='dark'] .period-line,
+html[data-theme='dark'] .quick-metrics,
+html[data-theme='dark'] .selected-product,
+html[data-theme='dark'] .alert-item,
+html[data-theme='dark'] .movement-row,
+html[data-theme='dark'] .completed-row,
+html[data-theme='dark'] .ranking-row {
+  border-color: var(--border) !important;
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  box-shadow: none !important;
+}
+
+html[data-theme='dark'] .summary-card.accent-card,
+html[data-theme='dark'] .summary-card.dark,
+html[data-theme='dark'] .kpi-card.featured {
+  background: #1d2435 !important;
+}
+
+html[data-theme='dark'] .search-box,
+html[data-theme='dark'] .search-field,
+html[data-theme='dark'] input,
+html[data-theme='dark'] select,
+html[data-theme='dark'] textarea,
+html[data-theme='dark'] .range-select {
+  border-color: var(--border) !important;
+  background: #111827 !important;
+  color: var(--text) !important;
+}
+
+html[data-theme='dark'] input::placeholder,
+html[data-theme='dark'] textarea::placeholder {
+  color: #707b91 !important;
+}
+
+html[data-theme='dark'] table,
+html[data-theme='dark'] thead,
+html[data-theme='dark'] tbody,
+html[data-theme='dark'] tr,
+html[data-theme='dark'] th,
+html[data-theme='dark'] td {
+  border-color: var(--border) !important;
+}
+
+html[data-theme='dark'] th {
+  color: #96a2ba !important;
+  background: #111827 !important;
+}
+
+html[data-theme='dark'] td {
+  color: #dfe5f0 !important;
+  background: var(--surface) !important;
+}
+
+html[data-theme='dark'] .secondary-button,
+html[data-theme='dark'] .icon-button,
+html[data-theme='dark'] .refresh-button,
+html[data-theme='dark'] .theme-button,
+html[data-theme='dark'] .topbar-logout,
+html[data-theme='dark'] .theme-toggle,
+html[data-theme='dark'] .pagination button {
+  border-color: var(--border) !important;
+  background: var(--surface-soft) !important;
+  color: #c6cedd !important;
+}
+
+html[data-theme='dark'] .secondary-button:hover,
+html[data-theme='dark'] .icon-button:hover,
+html[data-theme='dark'] .theme-button:hover,
+html[data-theme='dark'] .topbar-logout:hover,
+html[data-theme='dark'] .theme-toggle:hover {
+  border-color: #514b86 !important;
+  background: #202940 !important;
+  color: #fff !important;
+}
+
+html[data-theme='dark'] .drawer-backdrop,
+html[data-theme='dark'] .backdrop {
+  background: rgba(1, 5, 14, .66) !important;
+}
+
+html[data-theme='dark'] .profile-card.selected {
+  border-color: #776aff !important;
+  background: #211f3b !important;
+}
+
+html[data-theme='dark'] .demo-note,
+html[data-theme='dark'] .document-pill,
+html[data-theme='dark'] .category-pill,
+html[data-theme='dark'] .user-pill,
+html[data-theme='dark'] .role,
+html[data-theme='dark'] .status {
+  border-color: var(--border) !important;
+  background: #1c2436 !important;
+  color: #c9d1e0 !important;
+}
+
+html[data-theme='dark'] .chart-grid-lines,
+html[data-theme='dark'] .grid-line,
+html[data-theme='dark'] .progress-track,
+html[data-theme='dark'] .bar-track,
+html[data-theme='dark'] .movement-meter {
+  border-color: var(--border) !important;
+  background-color: #20293b !important;
+}
+
+html[data-theme='dark'] .toast-card,
+html[data-theme='dark'] .dialog-card {
+  border-color: var(--border) !important;
+  background: rgba(21, 28, 45, .98) !important;
+  color: var(--text) !important;
+}
+
+html[data-theme='dark'] .toast-copy span,
+html[data-theme='dark'] .dialog-copy p {
+  color: var(--muted) !important;
+}
+
+html[data-theme='dark'] .toast-close:hover {
+  color: #fff !important;
+  background: #263149 !important;
+}
+
+html[data-theme='dark'] .dialog-actions .secondary {
+  border-color: var(--border) !important;
+  color: #d2d9e6 !important;
+  background: #1b2335 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
