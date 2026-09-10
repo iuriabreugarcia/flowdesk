@@ -3,8 +3,6 @@
 
 FlowDesk is a production-ready business operations platform demonstrating a modern enterprise-oriented stack with Angular 20, ASP.NET Core 8, PostgreSQL, Docker, multi-tenancy, JWT/RBAC, inventory transactions and automated testing.
 
-E organizar visualmente:
-
 FlowDesk
 ├── Screenshots
 ├── Features
