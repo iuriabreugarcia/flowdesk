@@ -1,6 +1,6 @@
 # FlowDesk
 
-> Modern business operations platform built with Angular 20, ASP.NET Core 8, PostgreSQL, Docker, JWT/RBAC and multi-tenancy.
+> Modern Business Operations Platform · Angular 17 + ASP.NET Core 8 + PostgreSQL
 
 FlowDesk é um SaaS de gestão operacional criado como projeto de portfólio Full Stack. O projeto demonstra arquitetura de aplicação empresarial, autenticação/autorização, multi-tenancy, regras de estoque, auditoria, analytics, testes e entrega em containers.
 
