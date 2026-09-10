@@ -18,11 +18,10 @@ interface DemoProfile {
 }
 
 @Component({
-  selector: 'app-login',
-  standalone: true,
-  imports: [ReactiveFormsModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-login',
+    imports: [ReactiveFormsModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <main class="login-page">
       <section class="brand-panel">
         <div class="brand-content">
@@ -145,7 +144,7 @@ interface DemoProfile {
       </section>
     </main>
   `,
-  styles: [`
+    styles: [`
     :host { display: block; min-height: 100vh; }
 
     .login-page {

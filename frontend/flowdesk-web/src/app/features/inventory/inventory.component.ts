@@ -17,11 +17,10 @@ import { InventoryService } from './inventory.service';
 import { AuthService } from '../../core/auth/auth.service';
 
 @Component({
-  selector: 'app-inventory',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-inventory',
+    imports: [CommonModule, ReactiveFormsModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <section class="page-shell">
       <header class="page-header">
         <div>
@@ -201,7 +200,7 @@ import { AuthService } from '../../core/auth/auth.service';
 
     @if (toast()) { <div class="toast" [class.error-toast]="toast()?.type === 'error'"><span>{{ toast()?.type === 'success' ? '✓' : '!' }}</span><p>{{ toast()?.message }}</p></div> }
   `,
-  styles: [`
+    styles: [`
     :host { display:block; }.page-shell { display:grid; gap:18px; }.page-header { display:flex; justify-content:space-between; align-items:flex-end; gap:24px; }.eyebrow,.panel-header span { color:#6656ef; font-size: 11px; font-weight:850; letter-spacing:.15em; }.page-header h1 { margin:7px 0 5px; color:#1b2232; font-size: 32px; line-height:1; letter-spacing:-.045em; }.page-header p { margin:0; color:#81899a; font-size: 14px; }
     .primary-button,.secondary-button { min-height:41px; padding:0 15px; display:inline-flex; align-items:center; justify-content:center; gap:8px; border-radius:11px; border:0; font-size: 13px; font-weight:800; }.primary-button { color:#fff; background:#191d27; box-shadow:0 10px 24px rgba(20,24,34,.13); }.secondary-button { color:#626a79; background:#fff; border:1px solid #e0e4eb; }.primary-button:disabled { opacity:.65; }
     .summary-loading,.summary-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }.summary-loading span { height:90px; border-radius:14px; background:linear-gradient(90deg,#eef1f5,#fafbfc,#eef1f5); background-size:200% 100%; animation:shimmer 1.2s infinite; }.summary-card { min-height:90px; padding:16px; display:flex; align-items:center; gap:12px; border:1px solid #e5e8ef; border-radius:14px; background:#fff; }.summary-card.accent-card { color:#fff; border-color:#1e2330; background:#1e2330; }.metric-icon { width:34px; height:34px; display:grid; place-items:center; border-radius:10px; color:#6554ef; background:#efedff; font-size: 12px; font-weight:900; }.accent-card .metric-icon { color:#fff; background:rgba(255,255,255,.1); }.warning-card .metric-icon { color:#a66a0b; background:#fff3dc; }.danger-card .metric-icon { color:#bd4053; background:#fff0f2; }.summary-card div { display:grid; gap:3px; }.summary-card small { color:#838b9b; font-size: 11px; }.accent-card small { color:#b7bfcd; }.summary-card strong { font-size: 20px; letter-spacing:-.035em; }

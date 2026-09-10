@@ -12,11 +12,10 @@ import {
 import { ReportsService } from './reports.service';
 
 @Component({
-  selector: 'app-reports',
-  standalone: true,
-  imports: [CurrencyPipe, DatePipe, DecimalPipe, ReactiveFormsModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-reports',
+    imports: [CurrencyPipe, DatePipe, DecimalPipe, ReactiveFormsModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <section class="page-header">
       <div>
         <span class="eyebrow">ANALYTICS</span>
@@ -280,7 +279,7 @@ import { ReportsService } from './reports.service';
       }
     }
   `,
-  styles: [`
+    styles: [`
     :host { display: block; }
     .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 18px; }
     .eyebrow, .section-kicker { color: #6d5dfc; font-size: 11px; font-weight: 900; letter-spacing: .14em; }

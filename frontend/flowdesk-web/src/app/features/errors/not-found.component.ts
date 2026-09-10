@@ -2,11 +2,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-not-found',
-  standalone: true,
-  imports: [RouterLink],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-not-found',
+    imports: [RouterLink],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <main class="not-found">
       <span class="code">404</span>
       <span class="eyebrow">PÁGINA NÃO ENCONTRADA</span>
@@ -18,7 +17,7 @@ import { RouterLink } from '@angular/router';
       <a routerLink="/dashboard">Voltar ao dashboard →</a>
     </main>
   `,
-  styles: [`
+    styles: [`
     :host { display: block; }
     .not-found {
       min-height: calc(100vh - 134px);

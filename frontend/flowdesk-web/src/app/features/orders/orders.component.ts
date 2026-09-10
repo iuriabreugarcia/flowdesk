@@ -13,11 +13,10 @@ import { OrderItemsComponent } from './order-items.component';
 interface BoardColumn { status: OrderStatus; label: string; hint: string; }
 
 @Component({
-  selector: 'app-orders',
-  standalone: true,
-  imports: [ReactiveFormsModule, CurrencyPipe, DatePipe, CdkDropListGroup, CdkDropList, CdkDrag, CdkDragHandle, OrderItemsComponent],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-orders',
+    imports: [ReactiveFormsModule, CurrencyPipe, DatePipe, CdkDropListGroup, CdkDropList, CdkDrag, CdkDragHandle, OrderItemsComponent],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <section class="page-header">
       <div>
         <span class="eyebrow">OPERAÇÃO</span>
@@ -154,7 +153,7 @@ interface BoardColumn { status: OrderStatus; label: string; hint: string; }
 
     @if (toast()) { <div class="toast">{{ toast() }}</div> }
   `,
-  styles: [`
+    styles: [`
     :host { display:block; }
     .page-header { display:flex; justify-content:space-between; gap:24px; align-items:flex-end; margin-bottom:24px; }
     .eyebrow,.drawer-header span,.section-title span { color:#6d5dfc; font-size: 11px; font-weight:900; letter-spacing:.14em; }

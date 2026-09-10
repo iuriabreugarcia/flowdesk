@@ -10,11 +10,10 @@ import { AuthService } from '../../core/auth/auth.service';
 import { ConfirmService } from '../../core/feedback/confirm.service';
 
 @Component({
-  selector: 'app-customers',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-customers',
+    imports: [CommonModule, ReactiveFormsModule],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <section class="page-shell">
       <header class="page-header">
         <div>
@@ -273,7 +272,7 @@ import { ConfirmService } from '../../core/feedback/confirm.service';
       </div>
     }
   `,
-  styles: [`
+    styles: [`
     :host { display: block; }
     * { box-sizing: border-box; }
 

@@ -23,11 +23,10 @@ interface DashboardSummary {
 }
 
 @Component({
-  selector: 'app-dashboard',
-  standalone: true,
-  imports: [CurrencyPipe, NgClass],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-dashboard',
+    imports: [CurrencyPipe, NgClass],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <section class="page-header">
       <div>
         <span class="eyebrow">VISÃO GERAL</span>
@@ -146,7 +145,7 @@ interface DashboardSummary {
       <div class="error-state">Não foi possível carregar o dashboard.</div>
     }
   `,
-  styles: [`
+    styles: [`
     .page-header { display: flex; justify-content: space-between; gap: 24px; align-items: flex-end; margin-bottom: 28px; }
     .eyebrow, .panel-title span { color: var(--muted); font-size: 11px; font-weight: 800; letter-spacing: .14em; }
     h1 { margin: 8px 0 5px; font-size: 31px; line-height: 1; letter-spacing: -.04em; color: var(--text); }

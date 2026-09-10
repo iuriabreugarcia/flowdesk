@@ -11,11 +11,10 @@ import { calculateItemPricing } from './pricing.utils';
 import { OrdersService } from './orders.service';
 
 @Component({
-  selector: 'app-order-items',
-  standalone: true,
-  imports: [ReactiveFormsModule, CurrencyPipe, DecimalPipe],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-order-items',
+    imports: [ReactiveFormsModule, CurrencyPipe, DecimalPipe],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <section class="items-section">
       <header class="items-header">
         <div>
@@ -151,7 +150,7 @@ import { OrdersService } from './orders.service';
       }
     </section>
   `,
-  styles: [`
+    styles: [`
     :host { display:block; }
     .items-section { margin-top:22px; padding-top:20px; border-top:1px solid var(--border); }
     .items-header { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; }

@@ -4,14 +4,13 @@ import { ConfirmDialogComponent } from './shared/feedback/confirm-dialog.compone
 import { ToastContainerComponent } from './shared/feedback/toast-container.component';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, ToastContainerComponent, ConfirmDialogComponent],
-  template: `
+    selector: 'app-root',
+    imports: [RouterOutlet, ToastContainerComponent, ConfirmDialogComponent],
+    template: `
     <router-outlet />
     <app-toast-container />
     <app-confirm-dialog />
   `,
-  changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {}

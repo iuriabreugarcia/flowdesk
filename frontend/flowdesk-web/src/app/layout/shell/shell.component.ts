@@ -4,11 +4,10 @@ import { AuthService } from '../../core/auth/auth.service';
 import { ThemeService } from '../../core/theme/theme.service';
 
 @Component({
-  selector: 'app-shell',
-  standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
+    selector: 'app-shell',
+    imports: [RouterOutlet, RouterLink, RouterLinkActive],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    template: `
     <div class="app-shell">
       <aside class="sidebar" [class.open]="menuOpen()">
         <div class="sidebar-header">
@@ -130,7 +129,7 @@ import { ThemeService } from '../../core/theme/theme.service';
       </section>
     </div>
   `,
-  styles: [`
+    styles: [`
     :host { display: block; min-height: 100vh; }
     .app-shell { min-height: 100vh; display: grid; grid-template-columns: 255px 1fr; }
     .sidebar { position: sticky; top: 0; height: 100vh; padding: 16px 16px 12px; display: flex; flex-direction: column; background: #0b1020; color: #c4ccdc; z-index: 40; overflow-y: auto; overflow-x: hidden; }
